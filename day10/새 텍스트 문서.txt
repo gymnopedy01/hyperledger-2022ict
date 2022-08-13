@@ -1,0 +1,34 @@
+peer chaincode invoke
+ 원장에 작성
+peer chaincode query
+ 월드스테이트에서 조회
+
+
+5984 org1 peer1 
+7984 org2 peer1
+
+
+
+
+6,7,8,9,10 : 
+
+
+하이퍼렛져 도큐먼트 
+https://hyperledger-fabric.readthedocs.io/en/release-2.2/test_network.html
+
+
+도커 컴포즈에서 .env 파일을 읽음
+
+- crypto-config-org1.yaml 의 User.count 를 12로 변경
+- crypto-config-org3.yaml 을 생성 (crypt-config-org2를 원본으로)
+
+OR() A가 참이든 B가 참이든 둘다 참이된다.\
+
+
+가십프로토콜
+네트워크에 수많은게 있을때  순식간에 퍼트릴수있는 프로토콜
+
+
+sudo rm -rf organizations/peerOrganizations
+sudo rm -rf organizations/ordererOrganizations/
+sudo rm -rf organizations/fabric-ca/

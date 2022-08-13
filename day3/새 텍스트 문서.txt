@@ -1,0 +1,38 @@
+ID : bstudent
+
+PW: sys1234
+
+
+
+
+쿠폰
+
+대만 n샵 다음주
+
+네트워크 컨트랙트 앱
+
+
+3일차 오후 강의 다시 듣자.
+2시부터 4시 
+
+
+스마트컨트랙트 = 하이퍼 렛져 체인코드
+블록체인에 먼가를 요청해서, 먼가를 저장하는것, 서비스를 제공하는 프로그램
+
+
+
+couch db
+
+
+
+
+blockchain network 
+
+smart contract
+
+dapp
+
+
+fabric 
+
+peer couch db orderer ca 

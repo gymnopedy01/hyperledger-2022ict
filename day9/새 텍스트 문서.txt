@@ -1,0 +1,73 @@
+$ cd ~ /fabric-samples/chaincode/fabcar/go
+$ rm go.*
+$ rm -rf vendor/
+$ go mod init fabcar
+$ GO111MODULE=on go mod vendor
+$ go build
+
+
+docker ps -a 해서 서비스들이 다 구동 되어있어야함
+
+cd ~/fabric-samples/test-network
+
+export CORE_PEER_LOCALMSPID=”Org1MSP”
+export FABRIC_CFG_PATH=../config
+ORDERER_CA=${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+export CORE_PEER_LOCALMSPID=”Org1MSP”
+export CORE_PEER_TLS_ROOTCERT_FILE=./organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
+
+export CORE_PEER_TLS_ENABLED=true
+export CORE_PEER_LOCALMSPID="Org1MSP"
+export CORE_PEER_TLS_ROOTCERT_FILE=${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
+export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/
+export CORE_PEER_ADDRESS=localhost:7051
+
+부록 ) docker ps -a 했는데 exited 되어있는경우
+ cd ~/fabric-samples/fabcar/
+ ./startFabric.sh
+
+
+가입채널 확인
+peer channel list
+
+블록확인
+peer channel fetch newest -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com -c mychannel --tls --cafile $ORDERER_CA
+
+패키지
+peer lifecycle chaincode package fabcar2.tar.gz --path ../chaincode/fabcar/go --lang golang --label fabcar_2
+
+배포
+ peer lifecycle chaincode install fabcar2.tar.gz
+
+현재 설치된 체인코드를 확인
+peer lifecycle chaincode queryinstalled
+
+체인코드 승인
+peer lifecycle chaincode approveformyorg -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile $ORDERER_CA --channelID mychannel --name fabcar --version 2 --package-id fabcar_2:56e086191aebe6bf1c2a3dd727d33520a6cbfb57e756dab5e4420375586e329c --sequence 2
+
+
+peer lifecycle chaincode commit -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile $ORDERER_CA --channelID mychannel --name fabcar $PEER_CONN_PARMS --version 2 --sequence 2
+
+
+----------오후수업 -----------
+
+cd ~/fabric-samples/fabcar/javascrip
+node enrollAdmin.js
+node registerUser.js
+
+
+
+
+
+--------------- private data ------
+~/fabric-samples/test-network$ ./network.sh down
+
+
+지금까진 getStage , putState 로 사용
+
+private에서는 getPrivateData, putPrivateData 로 사용
+
+
+실습
+cd ~/fabric-samples/test-network
+./network.sh up createChannel -ca -s couchdb 

@@ -1,0 +1,59 @@
+  142  ls
+  143  cd src
+  144  mkdir control;cd control
+  145  ls
+  146  go build if_for.go
+  147  ls -al
+  148  ./if_for
+  149  go run if_for.go
+  150  history
+
+어떤 라이브러리에 정의된 함수를 사용할때 
+ex) strings.Addstring()
+
+아래처럼 alias 를 사용하고싶을때는 import s "strings" 로 하면 된다.
+ex) s.Addstring()
+import (
+	"fmt"
+	s "strings"
+)
+
+함수를 별칭으로 하기
+var p= fmt.Println
+
+슬라이스
+배열에 기초하여 만들어짐
+초기데이터를 잡지 않음
+배열에 비해 유연한 구조를 가지고 있어 배열보다 자주 사용됨
+슬라이스는 길이와 용량을 갖고 길이가 변할 수 있ㄴㄴ 구조
+배열 사용 방법
+var ar[]int -> 크기가 없는 벼열로 보임
+fruits := make([stirng, n)
+-> n개의 문자열 공간을 할당한 'fruits'라는 슬라이스 생성
+
+맵
+키에 대응하는 값을 신속히 찾는 해시테이블을 구현한 자료구조
+
+
+
+
+
+
+https://github.com/hyperledger/fabric/blob/release-1.4/core/chaincode/shim/interfaces.go
+
+
+
+//fabcar
+
+https://github.com/hyperledger/fabric/blob/release-1.4/core/chaincode/shim/interfaces.go
+~/go/src/str$ cd ~/fabric-samples/test-network
+~/fabric-samples/test-network$ ./network.sh down
+
+
+
+ ~/fabric-samples/chaincode/fabcar/go$ go build
+
+스마트컨트렉트는 체인코드가 배포되어있는 채널, 체인코드이름 으로 접근 할수있다.
+
+
+2시부터 4시까지 재수강 !! 회의시간이라 빼먹음 go 언어이므로 꼭 다시 들어야함

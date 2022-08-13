@@ -40,3 +40,7 @@ GetFunctionAndParameters()
 go 제공되는 라이브러리 두가지
 shim : 체인코드에 기록
 peer : 결과에 대해서 어떻게 리턴해줄것인가를 정의해준 라이브러리
+
+
+
+9시 10시 재수강!!

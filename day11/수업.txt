@@ -1,0 +1,42 @@
+1. startnetwork.sh : 물리적인 네트워크 노드들을 구동.
+ - 네트워크 활성화, 제네시스 블록생성, 컨테이너 구동, 네트워크시작
+
+2. createchannel.sh : 채널을 구성하고 생성
+
+3. setanchorpeerupdate.sh : 
+
+4. deployCC.sh : 채널 위에서 설치하고 배포하고 테스트를 함
+
+질문 & 답변
+채널 생성할때 체인코드 없이 쉘스크립트로 채널이 생성되는건가요?
+물리적으로 구동된 노드들에게 채널을 생성하라고 관리자가 명령을 함. 검토와 승인은 오더러가 함.
+
+앵커피어 : 구역에서 대장
+전달을 받으면 Org 에서 메시지를 전달함
+
+채널 위에서 설치하고 배포하고 테스트를 함
+
+
+
+
+cryptogen generate --config=./config/crypto-config-org2.yaml --output="organizations"
+--config 파일을 읽어서 out경로에 만들어줘
+
+configtxgen -profile TwoOrgsOrdererGenesis -channelID system-channel -outputBlock ./system-genesis-block/genesis.block
+블록을 만들어줘~~ config-tx.yaml 읽어서
+
+
+Template.Count 는 피어의 인증서
+Users.Count 는 ORG에 접근할수있는 사용자 숫자 
+관리자 인증서 기본적으로 한개 
+
+docker : 가상의 네트워크를 만든다. 매번 구성하지 않아도 된다.
+
+
+0.0.0.0 나의 모든 주소
+
+
+deploycc.sh
+1 .패키지
+2. 인스톨
+3. 승인

@@ -1,13 +1,6 @@
 ID : bstudent
-
 PW: sys1234
 
-
-
-
-쿠폰
-
-대만 n샵 다음주
 
 네트워크 컨트랙트 앱
 
@@ -27,12 +20,9 @@ couch db
 
 
 blockchain network 
-
 smart contract
-
 dapp
-
 
 fabric 
 
-peer couch db orderer ca 
+peer couch-db orderer ca 

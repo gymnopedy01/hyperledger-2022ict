@@ -1,0 +1,30 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import "fmt"
+
+// Fraud 리포트 : 관리자가 감독한 결과입니다.
+type FraudResult struct {
+	ReportID      int    `json:"report_id"`
+	InquiryID     int    `json:"inquiry_id"`
+	ShopName      string `json:"shop_name"`
+	Owner         string `json:"owner"`
+	Address       string `json:"address"`
+	ReportDate    string `json:"reportDate"`
+	EffectiveFrom string `json:"effectiveFrom"`
+	EffectiveTo   string `json:"effectiveTo"`
+	Result        string `json:"result"`
+}
+
+// Inquiry 조사 요청 : 사용자 의 조사 요청 입니다.
+type Inquiry struct {
+	InquiryID int    `json:"inquiry_id"`
+	ShopName  string `json:"shop_name"`
+	Address   string `json:"address"`
+	Message   string `json:"message"`
+}
+
+func main() {
+	fmt.Println("FRAUD REPORT SYSTEM")
+}

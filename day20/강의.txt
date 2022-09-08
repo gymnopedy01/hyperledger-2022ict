@@ -1,0 +1,73 @@
+인돌서와 커미터는 설정에는 안보여요. 어디에 있는건지 궁금해요.
+
+인도서는 먼트 폴리시만 가능 
+ peer 내에서 관리되는 프로세스
+
+채널 세팅 할때 
+채널단위로 폴리시가 있고, 체인코드들을 넣을수잇는데, 폴리시도 우선순위가 있다.
+
+
+
+go 언어 많이쓰시나요?
+
+----------------
+깃을 왜쓰는가.
+형상관리
+여러사람이 작업하기 위해서.
+
+
+----------------------------
+/home/bstudent/fabric-samples/asset-transfer-ledger-queries/chaincode-go/asset_transfer_ledger_chaincode.go
+
+1. Composite 키 사용
+GenerateCompositeKey
+GetStateByPartialCompositeKey
+SplitCompositeKey
+
+넣을때 만들어서, 추출할때는 리스트에서 매건씩 가져와서
+
+
+
+chaincode에서 "CreateAsset" 이벤트 발생시키면
+/home/bstudent/fabric-samples/asset-transfer-events/chaincode-java/src/main/java/org/hyperledger/fabric/samples/events/AssetTransfer.java
+
+
+DApp 에서 CreateAsset알림을 받을 수 있음
+/home/bstudent/fabric-samples/asset-transfer-events/application-javascript/app.js
+
+
+
+---------------
+abac - attribute base acess control
+클라이언트의 접근 제한을 주고 확인 할수 있음.
+/home/bstudent/fabric-samples/asset-transfer-abac/chaincode-go/smart-contract/abac.go
+
+
+-----------------
+token-erc-20
+token-erc-721
+token-erc-1155
+
+토큰을 만들수있다.
+
+https://github.com/hyperledger/fabric-samples/blob/main/token-erc-721/chaincode-go/chaincode/erc721-contract.go
+
+- application : 서버 (NODE.jS Express)
+- contract : 체인코드 (GO)
+- network : 네트워크 구성 (Network 구조 그림 참고) 
+  - startnetwork.sh     
+  - createchannel.sh
+  - setAnchorPeerUpdate.sh
+  - networkdown.sh
+
+
+
+
+type User struct {
+	UserId string `json:"userId"`	//사용자명
+	UserType int `json:"userType"`
+	Password string `json:"password"`
+}
+
+
+
